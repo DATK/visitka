@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профиль Фрилансера | Павел</title>
+    <link rel="stylesheet" href={{url_for('static', filename='style.css' )}}>
+</head>
+
+<body>
+    <header>
+        <h1>Павел</h1>
+        <nav>
+            <ul>
+                <li><a href="#services">Услуги</a></li>
+                <li><a href="#portfolio">Портфолио</a></li>
+                <li><a href="#about">Обо мне</a></li>
+                <li><a href="#contact">Контакты</a></li>
+                <li><a href="#otsivi">Отзывы</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="services">
+        <h2>Услуги</h2>
+        <p>Предоставляю услуги для написания веб-сайта, веб-приложения<br>Также могу написать десктопное или же
+            мобильное приложение<br>Владею языками: C++, HTML,CSS,JavaScript,SQL,Python(+множетсво Python модулей)</p>
+    </section>
+
+    <section id="portfolio">
+        <h2>Портфолио</h2>
+        <div class="portfolio-item">
+            <h3>Одна из моих работ на Pyton - Chat</h3>
+            <img src={{url_for('static', filename='./img/portfolio-item1.jpg' )}} alt="Пример работы 1">
+            <p>Данное приложение является почтовым месенджером с шифрованием в ревльном времени, используется шифрование
+                Цезаря, алфавит которого пользователь может менять в режиме разговора.<br>
+                Имеется регистрация пользователя и разгарничение прав для него. Реализовано в консольном виде с помощью
+                Pyton</p>
+            <a href="https://github.com/DATK/Chat_">Chat</a>
+        </div>
+        <div class="portfolio-item2">
+            <h3>Одна из моих работ на Pyton - Chat_2</h3>
+            <img src={{url_for('static', filename='./img/portfolio-item2.jpg' )}} alt="Пример работы 2">
+            <p>Данное приложение является почтовым месенджером, как и Chat<br>
+                Появилась графическая оболочка, на сервере ведется учет сообщений. Находится в разработке</p>
+            <a href="https://github.com/DATK/CHAT_2">Chat2</a>
+        </div>
+        <div class="portfolio-item3">
+            <h3>Форма вируса трояна - Keyloger</h3>
+            <img src={{url_for('static', filename='./img/portfolio-item3.jpg' )}} alt="Пример работы 3">
+            <p>Данное ПО фиксирует клавиши, которые нажимает пользователь и отправляет данные на сервер.<br>
+             Копирует само себя при удалении, работает в фоновом режиме. Находися в разработке </p>
+            <a href="https://github.com/DATK/keyloger">KeyLoger</a>
+        </div>
+
+    </section>
+
+    <section id="about">
+        <h2>Обо мне</h2>
+        <p>Профессиональный программист с опытом в разработке веб-приложений и сайтов. Люблю изучать новые технологии.
+        </p>
+    </section>
+
+    <section id="contact">
+        <h2>Контакты</h2>
+        <p>Email: mypochta@gmial.com</p>
+        <p>Телефон: +7 (900) 654 11 11</p>
+    </section>
+
+    <section id="otsivi">
+        <h2>Отзывы</h2>
+        <p>Здесь вы можете оставить свой отызв обо мне</p>
+        <form action="" method="post">
+            <label for="username" class="i1">Имя:</label>
+            <input type="text" id="username" name="name" class="i1" required>
+
+            <label for="review" class="i2">Отзыв:</label>
+            <textarea id="review" name="text" class="i2" required></textarea>
+
+            <button type="submit" id="b1">Отправить</button>
+        </form>
+        <div class="otss">
+            {% for i in data %}
+                <div class="ots"><p>{{i}}</p></div>
+           {% endfor %}
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; Павел</p>
+    </footer>
+</body>
+
+</html>
